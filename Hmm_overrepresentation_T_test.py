@@ -145,7 +145,7 @@ class HmmTtest:
 
         results = pd.DataFrame.from_records(records, index='hmm')
 
-        print(f'Writing results to {self.output}') # TODO exporter
+        print(f'Writing results to {self.output}')
         results.to_excel(self.output)
 
 
