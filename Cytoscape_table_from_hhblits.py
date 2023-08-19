@@ -85,11 +85,11 @@ def read_hhout(input_path: Path,
 if __name__ == '__main__':
 
     # similarity thresholds
+  
     e_value_threshold = 1e-5
     cov_threshod = 0.75
 
     # input and output files
-
 
     hhblits_dir = Path(' ... /hhblits_result')
     iput_files = [f for f in hhblits_dir.iterdir() if f.suffix == '.log']
@@ -103,6 +103,7 @@ if __name__ == '__main__':
     output_dir.mkdir()
 
     # parsing and filtering alignments
+  
     all_records = []
     log = []
 
@@ -118,6 +119,7 @@ if __name__ == '__main__':
     print(f'found {len(all_nodes)} nodes and {len(all_records)} edges')
 
     # writing output files
+  
     result_frame = pd.DataFrame.from_records(all_records)
     out_xlsx = hhblits_dir.parent.joinpath(f'{hhblits_dir.name}.xlsx')
     out_tsv = hhblits_dir.parent.joinpath(f'{hhblits_dir.name}.tsv')
